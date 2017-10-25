@@ -1,0 +1,69 @@
+﻿@model Hive2._0.Models.User
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LOGIN</title>
+</head>
+    <body>
+        <div id="login-div">
+            @using (Html.BeginForm("Autherize","Login", FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <td></td>
+                        <td style="text-decoration:underline">App Name</td>
+                    </tr>
+                    <tr>
+                        <td>
+                        @Html.LabelFor(Model=>Model.UserName)
+                        </td>
+                        <td>
+                            @Html.EditorFor(Model => Model.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.ValidationMessageFor(Model => Model.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(Model => Model.Password)
+                        </td>
+                        <td>
+                            @Html.EditorFor(Model => Model.Password)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.ValidationMessageFor(Model => Model.Password)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label>@Html.DisplayFor(Model => Model.LoginErrorMessage)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" name="name" value="Login"/>
+                            <input type="reset" name="name" value="Clear" />
+
+                        </td>
+                    </tr>
+                </table>
+            }
+        </div>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    </body>
+</html>
+
