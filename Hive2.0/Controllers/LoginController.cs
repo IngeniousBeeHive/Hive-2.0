@@ -39,6 +39,22 @@ namespace Hive2._0.Controllers
                
         }
 
+        public ActionResult SignUp()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Signup(Models.User obj)
+        {
+            if (ModelState.IsValid)
+            {
+                Models.Ingenious_BeeHiveEntities db = new Models.Ingenious_BeeHiveEntities();
+                db.Users.Add(obj);
+                db.SaveChanges();
+            }
+            return View(obj);
+        }
+
         public ActionResult LogOut()
         {
             int userID = (int)Session["userID"];        //To show Active User

@@ -11,6 +11,9 @@ namespace Hive2._0.Models
 {
     using System;
     using System.Collections.Generic;
+
+    using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
@@ -18,8 +21,8 @@ namespace Hive2._0.Models
     public partial class User
     {
         public int UserId { get; set; }
-        [DisplayName("User Name")]                                   
-        [Required(ErrorMessage ="Required Username...")]                //Validation for login
+        [DisplayName("User Name")]
+        [Required(ErrorMessage = "Required Username...")]                //Validation for login
 
         public string UserName { get; set; }
         [DataType(DataType.Password)]

@@ -26,5 +26,6 @@ namespace Hive2._0.Models
         }
     
         public DbSet<User> Users { get; set; }
+        public object Models { get; internal set; }
     }
 }
