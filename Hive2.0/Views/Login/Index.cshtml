@@ -35,10 +35,13 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Login"  class="btn btn-default" />
+                <button type="button"  class="btn btn-default" onclick="location.href='@Url.Action("SignUp","Login")'">SignUp</button>
+                    @*@Html.ActionLink("SignUp", "SignUp", "Login")*@
+      
             </div>
         </div>
     </div>
-}
+                    }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
